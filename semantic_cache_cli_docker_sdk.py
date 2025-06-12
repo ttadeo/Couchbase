@@ -27,7 +27,7 @@ from couchbase.vector_search import VectorQuery, VectorSearch
 DB_HOST = "localhost"
 # The application user credentials created in your local Couchbase UI.
 DB_USERNAME = "app_user"
-DB_PASSWORD = "Sylveo$259"
+DB_PASSWORD = "xxxxxx"
 BUCKET_NAME = "travel-sample"
 # The name of the FTS index we created in the local Couchbase UI.
 INDEX_NAME = "hybrid-hotel-search-index"
