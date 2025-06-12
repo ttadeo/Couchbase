@@ -26,7 +26,7 @@ from couchbase.options import ClusterOptions, QueryOptions
 DB_HOST = "localhost"
 # The administrator credentials for your local Docker instance.
 DB_USERNAME = "Administrator"
-DB_PASSWORD = "Sylveo$259"
+DB_PASSWORD = "xxxxxx"
 # The name of the bucket containing the data.
 BUCKET_NAME = "travel-sample"
 
