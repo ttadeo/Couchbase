@@ -1,0 +1,32 @@
+Challenges Encountered & Areas for Improvement
+This document details the troubleshooting journey undertaken during this project and outlines potential improvements for a production-grade version of this application. The process of diagnosing and resolving these issues was a critical part of the challenge and demonstrates a robust, real-world problem-solving methodology.
+
+Challenges Encountered
+The path to a successful implementation on Couchbase Capella involved navigating and solving several distinct technical challenges.
+
+1. The QueryIndexNotFoundException Permissions Puzzle
+The most significant challenge was a persistent QueryIndexNotFoundException when running the application, even after confirming the FTS index existed.
+
+Symptom: The script would fail with an "index not found" error, but the error context revealed the true cause: rest_auth: preparePerms. This indicated a permissions failure, not a missing index.
+
+Diagnosis: The key insight came from testing the query in the Capella UI. While logged in as our app_user, we could successfully execute a simple keyword search against the FTS index. This proved the index was valid and the user had the basic Search Admin role. The failure was isolated to the Python SDK's interaction with the server.
+
+Resolution: Through careful reading of the SDK documentation and analysis of deprecation warnings, we discovered that the SDK requires an explicit scope context to find a scoped index. The final, successful architecture was achieved by re-writing the query logic to first get a Scope object from the cluster and then calling the .search() method directly on that scope. This provided the unambiguous context the SDK needed to find the index.
+
+2. Initial Environment & SDK Nuances
+The development process also involved overcoming several smaller, but important, technical hurdles.
+
+Initial Connection Timeouts: Early attempts to connect to Capella were blocked by DNS resolution failures and an incorrect IP Allowlist configuration on the local machine. These were diagnosed methodically using ping and curl.
+
+SDK Versioning & Imports: A lack of deep familiarity with the couchbase Python SDK (v4.4.0) led to several ImportError and AttributeError messages. For example, VectorQuery had to be imported from the couchbase.vector_search module, not couchbase.search.
+
+SDK Object Model: We learned that many properties on the SDK's result objects are methods that must be called (e.g., result.rows(), result.metadata().metrics()). A final TypeError was resolved by understanding that the .took() method returns a timedelta object that must be converted to a number (.total_seconds()) before being formatted.
+
+Future Improvements
+While the current application successfully meets the challenge requirements, a production-grade version could be enhanced in several ways.
+
+Code-based Index Management: Instead of creating the FTS index manually through the UI, the index definition could be stored in a JSON file. A script using Python's requests library could then use the Couchbase FTS REST API (on port 8094) to create or update the index automatically, enabling an Infrastructure as Code (IaC) workflow.
+
+Advanced Hybrid Search Logic: The current hybrid search combines one keyword query and one vector query. A more advanced implementation could construct more complex queries, for instance by parsing the user's input for specific filters (e.g., hotels in Paris with a garden) and adding them as TermQuery or BooleanQuery clauses within the FTS ConjunctionQuery for more precise results.
+
+Configuration Management: For better security and portability, sensitive information like database credentials and endpoints should be moved out of the script and managed through environment variables, using a library like python-dotenv to load them.
