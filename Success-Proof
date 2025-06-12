@@ -1,0 +1,1096 @@
+
+
+
+
+
+
+
+(cb-sdk-py313) timtadeo@Tims-MacBook-Pro-2 CouchBase % python semantic_cache_cli_sdk.py --query "a hotel with a nice garden"
+Connecting to Couchbase Capella at 'cb.aa5iafvhxvmxutqg.cloud.couchbase.com'...
+Successfully connected to Couchbase Capella.
+
+Performing hybrid search for: 'a hotel with a nice garden'...
+Generating query vector...
+Vector generated.
+Executing FTS hybrid search query on Capella 'inventory' scope...
+
+--- Search Results ---
+Score: 3.8853
+  Hotel: N/A
+  Description: Nice hotel with a very quiet garden....
+-------------------------
+Score: 1.3864
+  Hotel: N/A
+  Description: Charming five-star boutique hotel with a secluded patio and lush vertical garden....
+-------------------------
+Score: 1.0510
+  Hotel: N/A
+  Description: Hotel 3* located in the Nice Center just near the Nice Station...
+-------------------------
+Score: 0.9102
+  Hotel: N/A
+  Description: Hotel 4* located in the Nice Center just near Promenade des anglais and the Historic Nice...
+-------------------------
+Score: 0.8830
+  Hotel: N/A
+  Description: Nice, clean hotel with small rooms but a great location....
+-------------------------
+
+Query completed in 1.39 ms
+Total Hits Found: 436
+
+CLI finished.
+(cb-sdk-py313) timtadeo@Tims-MacBook-Pro-2 CouchBase % 
+
+
+
+
+Request timeout for icmp_seq 62
+Request timeout for icmp_seq 63
+Request timeout for icmp_seq 64
+Request timeout for icmp_seq 65
+Request timeout for icmp_seq 66
+Request timeout for icmp_seq 67
+Request timeout for icmp_seq 68
+Request timeout for icmp_seq 69
+Request timeout for icmp_seq 70
+Request timeout for icmp_seq 71
+Request timeout for icmp_seq 72
+Request timeout for icmp_seq 73
+Request timeout for icmp_seq 74
+Request timeout for icmp_seq 75
+Request timeout for icmp_seq 76
+Request timeout for icmp_seq 77
+Request timeout for icmp_seq 78
+Request timeout for icmp_seq 79
+Request timeout for icmp_seq 80
+Request timeout for icmp_seq 81
+Request timeout for icmp_seq 82
+^C
+--- cb.aa5iafvhxvmxutqg.cloud.couchbase.com ping statistics ---
+84 packets transmitted, 0 packets received, 100.0% packet loss
+(cb-sdk-py313) timtadeo@Tims-MacBook-Pro-2 CouchBase % python capella_connect_test.py 
+Traceback (most recent call last):
+  File "/Users/timtadeo/Desktop/CouchBase/capella_connect_test.py", line 39, in <module>
+    cb = cluster.bucket(bucket_name)
+  File "/Users/timtadeo/venvs/cb-sdk-py313/lib/python3.13/site-packages/couchbase/cluster.py", line 158, in bucket
+    return Bucket(self, bucket_name)
+  File "/Users/timtadeo/venvs/cb-sdk-py313/lib/python3.13/site-packages/couchbase/bucket.py", line 57, in __init__
+    self._open_bucket()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/timtadeo/venvs/cb-sdk-py313/lib/python3.13/site-packages/couchbase/logic/wrappers.py", line 98, in wrapped_fn
+    raise e
+  File "/Users/timtadeo/venvs/cb-sdk-py313/lib/python3.13/site-packages/couchbase/logic/wrappers.py", line 82, in wrapped_fn
+    ret = fn(self, *args, **kwargs)
+  File "/Users/timtadeo/venvs/cb-sdk-py313/lib/python3.13/site-packages/couchbase/bucket.py", line 63, in _open_bucket
+    raise ErrorMapper.build_exception(ret)
+couchbase.exceptions.BucketNotFoundException: BucketNotFoundException(<ec=10, category=couchbase.common, message=bucket_not_found (10), C Source=/Users/couchbase/jenkins/workspace/python/sdk/python-scripted-build-pipeline/py-client/src/connection.cxx:114>)
+(cb-sdk-py313) timtadeo@Tims-MacBook-Pro-2 CouchBase % python capella_connect_test.py
+
+Create document success. CAS:  1749743934326112256
+
+Fetch document success. Result:  {'type': 'airline', 'id': 8091, 'callsign': 'CBS', 'iata': None, 'icao': None, 'name': 'Couchbase Airways'}
+
+Update document success. CAS:  1749743934396432384
+
+Delete document success. CAS:  1749743934431494144
+(cb-sdk-py313) timtadeo@Tims-MacBook-Pro-2 CouchBase % python semantic_cache_cli_sdk.py --query "a hotel with a nice garden"
+Connecting to Couchbase Capella at 'cb.aa5iafvhxvmxutqg.cloud.couchbase.com'...
+Successfully connected to Couchbase Capella.
+
+Performing hybrid search for: 'a hotel with a nice garden'...
+Generating query vector...
+Vector generated.
+Executing FTS hybrid search query on Capella 'inventory' scope...
+
+--- Search Results ---
+Score: 3.8853
+  Hotel: N/A
+  Description: Nice hotel with a very quiet garden....
+-------------------------
+Score: 1.3864
+  Hotel: N/A
+  Description: Charming five-star boutique hotel with a secluded patio and lush vertical garden....
+-------------------------
+Score: 1.0510
+  Hotel: N/A
+  Description: Hotel 3* located in the Nice Center just near the Nice Station...
+-------------------------
+Score: 0.9102
+  Hotel: N/A
+  Description: Hotel 4* located in the Nice Center just near Promenade des anglais and the Historic Nice...
+-------------------------
+Score: 0.8830
+  Hotel: N/A
+  Description: Nice, clean hotel with small rooms but a great location....
+-------------------------
+
+Query completed in 1.46 ms
+Total Hits Found: 436
+
+CLI finished.
+(cb-sdk-py313) timtadeo@Tims-MacBook-Pro-2 CouchBase % python semantic_cache_cli_sdk.py --query "a hotel with a nice garden"
+Connecting to Couchbase Capella at 'cb.aa5iafvhxvmxutqg.cloud.couchbase.com'...
+Successfully connected to Couchbase Capella.
+
+Performing hybrid search for: 'a hotel with a nice garden'...
+Generating query vector...
+Vector generated.
+Executing FTS hybrid search query on Capella 'inventory' scope...
+
+--- Search Results ---
+Score: 3.8853
+  Hotel: N/A
+  Description: Nice hotel with a very quiet garden....
+-------------------------
+Score: 1.3864
+  Hotel: N/A
+  Description: Charming five-star boutique hotel with a secluded patio and lush vertical garden....
+-------------------------
+Score: 1.0510
+  Hotel: N/A
+  Description: Hotel 3* located in the Nice Center just near the Nice Station...
+-------------------------
+Score: 0.9102
+  Hotel: N/A
+  Description: Hotel 4* located in the Nice Center just near Promenade des anglais and the Historic Nice...
+-------------------------
+Score: 0.8830
+  Hotel: N/A
+  Description: Nice, clean hotel with small rooms but a great location....
+-------------------------
+
+Query completed in 1.39 ms
+Total Hits Found: 436
+
+CLI finished.
+(cb-sdk-py313) timtadeo@Tims-MacBook-Pro-2 CouchBase % python generate_embeddings.py 
+Loading embedding model 'all-MiniLM-L6-v2'...
+Model loaded successfully.
+Connecting to Couchbase Capella bucket 'travel-sample'...
+/Users/timtadeo/Desktop/CouchBase/generate_embeddings.py:36: CouchbaseDeprecationWarning: Importing ClusterOptions from couchbase.cluster is deprecated and will be removed in a future release.  Import ClusterOptions from couchbase.options instead.
+  cluster = Cluster(f"couchbases://{CAPELLA_ENDPOINT}", ClusterOptions(auth))
+Successfully connected to Capella.
+
+Executing query to fetch hotel document IDs...
+Found 917 hotel documents to process.
+(1/917) Successfully updated document: hotel_10025
+(2/917) Successfully updated document: hotel_10026
+(3/917) Successfully updated document: hotel_10063
+(4/917) Successfully updated document: hotel_10064
+(5/917) Successfully updated document: hotel_10138
+(6/917) Successfully updated document: hotel_10142
+(7/917) Successfully updated document: hotel_10158
+(8/917) Successfully updated document: hotel_10159
+(9/917) Successfully updated document: hotel_10160
+(10/917) Successfully updated document: hotel_10161
+(11/917) Successfully updated document: hotel_10180
+(12/917) Successfully updated document: hotel_10289
+(13/917) Successfully updated document: hotel_10290
+(14/917) Successfully updated document: hotel_10291
+(15/917) Successfully updated document: hotel_1072
+(16/917) Successfully updated document: hotel_10848
+(17/917) Successfully updated document: hotel_10849
+(18/917) Successfully updated document: hotel_10850
+(19/917) Successfully updated document: hotel_10851
+(20/917) Successfully updated document: hotel_10904
+(21/917) Successfully updated document: hotel_1097
+(22/917) Successfully updated document: hotel_11219
+(23/917) Successfully updated document: hotel_11315
+(24/917) Successfully updated document: hotel_11331
+(25/917) Successfully updated document: hotel_11332
+(26/917) Successfully updated document: hotel_11376
+(27/917) Successfully updated document: hotel_11377
+(28/917) Successfully updated document: hotel_11378
+(29/917) Successfully updated document: hotel_11485
+(30/917) Successfully updated document: hotel_11787
+(31/917) Successfully updated document: hotel_11788
+(32/917) Successfully updated document: hotel_11789
+(33/917) Successfully updated document: hotel_11790
+(34/917) Successfully updated document: hotel_11791
+(35/917) Successfully updated document: hotel_11795
+(36/917) Successfully updated document: hotel_12068
+(37/917) Successfully updated document: hotel_12228
+(38/917) Successfully updated document: hotel_12229
+(39/917) Successfully updated document: hotel_12230
+(40/917) Successfully updated document: hotel_12236
+(41/917) Successfully updated document: hotel_12237
+(42/917) Successfully updated document: hotel_12238
+(43/917) Successfully updated document: hotel_12239
+(44/917) Successfully updated document: hotel_12240
+(45/917) Successfully updated document: hotel_12241
+(46/917) Successfully updated document: hotel_12242
+(47/917) Successfully updated document: hotel_12243
+(48/917) Successfully updated document: hotel_12337
+(49/917) Successfully updated document: hotel_12357
+(50/917) Successfully updated document: hotel_12922
+(51/917) Successfully updated document: hotel_12923
+(52/917) Successfully updated document: hotel_12924
+(53/917) Successfully updated document: hotel_12925
+(54/917) Successfully updated document: hotel_12926
+(55/917) Successfully updated document: hotel_12927
+(56/917) Successfully updated document: hotel_12928
+(57/917) Successfully updated document: hotel_12929
+(58/917) Successfully updated document: hotel_12930
+(59/917) Successfully updated document: hotel_1357
+(60/917) Successfully updated document: hotel_1358
+(61/917) Successfully updated document: hotel_1359
+(62/917) Successfully updated document: hotel_1360
+(63/917) Successfully updated document: hotel_1361
+(64/917) Successfully updated document: hotel_1362
+(65/917) Successfully updated document: hotel_1363
+(66/917) Successfully updated document: hotel_1364
+(67/917) Successfully updated document: hotel_1368
+(68/917) Successfully updated document: hotel_13701
+(69/917) Successfully updated document: hotel_13702
+(70/917) Successfully updated document: hotel_14005
+(71/917) Successfully updated document: hotel_14006
+(72/917) Successfully updated document: hotel_14225
+(73/917) Successfully updated document: hotel_14226
+(74/917) Successfully updated document: hotel_1501
+(75/917) Successfully updated document: hotel_1506
+(76/917) Successfully updated document: hotel_1507
+(77/917) Successfully updated document: hotel_15134
+(78/917) Successfully updated document: hotel_15135
+(79/917) Successfully updated document: hotel_15148
+(80/917) Successfully updated document: hotel_15466
+(81/917) Successfully updated document: hotel_15539
+(82/917) Successfully updated document: hotel_15558
+(83/917) Successfully updated document: hotel_1573
+(84/917) Successfully updated document: hotel_15730
+(85/917) Successfully updated document: hotel_15912
+(86/917) Successfully updated document: hotel_15913
+(87/917) Successfully updated document: hotel_15914
+(88/917) Successfully updated document: hotel_15915
+(89/917) Successfully updated document: hotel_15916
+(90/917) Successfully updated document: hotel_15917
+(91/917) Successfully updated document: hotel_15918
+(92/917) Successfully updated document: hotel_15949
+(93/917) Successfully updated document: hotel_15951
+(94/917) Successfully updated document: hotel_15955
+(95/917) Successfully updated document: hotel_15956
+(96/917) Successfully updated document: hotel_15957
+(97/917) Successfully updated document: hotel_15965
+(98/917) Successfully updated document: hotel_15974
+(99/917) Successfully updated document: hotel_15975
+(100/917) Successfully updated document: hotel_15976
+(101/917) Successfully updated document: hotel_15977
+(102/917) Successfully updated document: hotel_15978
+(103/917) Successfully updated document: hotel_16045
+(104/917) Successfully updated document: hotel_16112
+(105/917) Successfully updated document: hotel_16113
+(106/917) Successfully updated document: hotel_16114
+(107/917) Successfully updated document: hotel_16167
+(108/917) Successfully updated document: hotel_16168
+(109/917) Successfully updated document: hotel_16169
+(110/917) Successfully updated document: hotel_16170
+(111/917) Successfully updated document: hotel_16171
+(112/917) Successfully updated document: hotel_16172
+(113/917) Successfully updated document: hotel_16173
+(114/917) Successfully updated document: hotel_16174
+(115/917) Successfully updated document: hotel_16175
+(116/917) Successfully updated document: hotel_16176
+(117/917) Successfully updated document: hotel_16177
+(118/917) Successfully updated document: hotel_16178
+(119/917) Successfully updated document: hotel_16179
+(120/917) Successfully updated document: hotel_16180
+(121/917) Successfully updated document: hotel_16235
+(122/917) Successfully updated document: hotel_16236
+(123/917) Successfully updated document: hotel_16237
+(124/917) Successfully updated document: hotel_16238
+(125/917) Successfully updated document: hotel_16239
+(126/917) Successfully updated document: hotel_16258
+(127/917) Successfully updated document: hotel_16262
+(128/917) Successfully updated document: hotel_1627
+(129/917) Successfully updated document: hotel_16345
+(130/917) Successfully updated document: hotel_16346
+(131/917) Successfully updated document: hotel_16347
+(132/917) Successfully updated document: hotel_16348
+(133/917) Successfully updated document: hotel_16349
+(134/917) Successfully updated document: hotel_16350
+(135/917) Successfully updated document: hotel_16351
+(136/917) Successfully updated document: hotel_16435
+(137/917) Successfully updated document: hotel_16436
+(138/917) Successfully updated document: hotel_16437
+(139/917) Successfully updated document: hotel_16438
+(140/917) Successfully updated document: hotel_16439
+(141/917) Successfully updated document: hotel_16440
+(142/917) Successfully updated document: hotel_16441
+(143/917) Successfully updated document: hotel_16442
+(144/917) Successfully updated document: hotel_16443
+(145/917) Successfully updated document: hotel_16444
+(146/917) Successfully updated document: hotel_16445
+(147/917) Successfully updated document: hotel_16446
+(148/917) Successfully updated document: hotel_16447
+(149/917) Successfully updated document: hotel_16448
+(150/917) Successfully updated document: hotel_16449
+(151/917) Successfully updated document: hotel_16450
+(152/917) Successfully updated document: hotel_16451
+(153/917) Successfully updated document: hotel_16452
+(154/917) Successfully updated document: hotel_16453
+(155/917) Successfully updated document: hotel_16454
+(156/917) Successfully updated document: hotel_16455
+(157/917) Successfully updated document: hotel_16456
+(158/917) Successfully updated document: hotel_16457
+(159/917) Successfully updated document: hotel_16458
+(160/917) Successfully updated document: hotel_16459
+(161/917) Successfully updated document: hotel_16460
+(162/917) Successfully updated document: hotel_16461
+(163/917) Successfully updated document: hotel_16521
+(164/917) Successfully updated document: hotel_16522
+(165/917) Successfully updated document: hotel_16523
+(166/917) Successfully updated document: hotel_16524
+(167/917) Successfully updated document: hotel_16525
+(168/917) Successfully updated document: hotel_16526
+(169/917) Successfully updated document: hotel_16527
+(170/917) Successfully updated document: hotel_16528
+(171/917) Successfully updated document: hotel_16529
+(172/917) Successfully updated document: hotel_16530
+(173/917) Successfully updated document: hotel_16630
+(174/917) Successfully updated document: hotel_16631
+(175/917) Successfully updated document: hotel_16632
+(176/917) Successfully updated document: hotel_16633
+(177/917) Successfully updated document: hotel_16634
+(178/917) Successfully updated document: hotel_16635
+(179/917) Successfully updated document: hotel_16636
+(180/917) Successfully updated document: hotel_16637
+(181/917) Successfully updated document: hotel_16638
+(182/917) Successfully updated document: hotel_16639
+(183/917) Successfully updated document: hotel_16640
+(184/917) Successfully updated document: hotel_16648
+(185/917) Successfully updated document: hotel_16686
+(186/917) Successfully updated document: hotel_16687
+(187/917) Successfully updated document: hotel_16708
+(188/917) Successfully updated document: hotel_16709
+(189/917) Successfully updated document: hotel_16710
+(190/917) Successfully updated document: hotel_17308
+(191/917) Successfully updated document: hotel_17309
+(192/917) Successfully updated document: hotel_17310
+(193/917) Successfully updated document: hotel_17311
+(194/917) Successfully updated document: hotel_17312
+(195/917) Successfully updated document: hotel_17313
+(196/917) Successfully updated document: hotel_17413
+(197/917) Successfully updated document: hotel_17414
+(198/917) Successfully updated document: hotel_17415
+(199/917) Successfully updated document: hotel_17416
+(200/917) Successfully updated document: hotel_17595
+(201/917) Successfully updated document: hotel_17596
+(202/917) Successfully updated document: hotel_17597
+(203/917) Successfully updated document: hotel_17598
+(204/917) Successfully updated document: hotel_17599
+(205/917) Successfully updated document: hotel_17600
+(206/917) Successfully updated document: hotel_17932
+(207/917) Successfully updated document: hotel_18819
+(208/917) Successfully updated document: hotel_18843
+(209/917) Successfully updated document: hotel_18844
+(210/917) Successfully updated document: hotel_18845
+(211/917) Successfully updated document: hotel_19198
+(212/917) Successfully updated document: hotel_19199
+(213/917) Successfully updated document: hotel_19323
+(214/917) Successfully updated document: hotel_19324
+(215/917) Successfully updated document: hotel_19325
+(216/917) Successfully updated document: hotel_19326
+(217/917) Successfully updated document: hotel_20122
+(218/917) Successfully updated document: hotel_20123
+(219/917) Successfully updated document: hotel_20124
+(220/917) Successfully updated document: hotel_20147
+(221/917) Successfully updated document: hotel_20355
+(222/917) Successfully updated document: hotel_20356
+(223/917) Successfully updated document: hotel_20357
+(224/917) Successfully updated document: hotel_20419
+(225/917) Successfully updated document: hotel_20420
+(226/917) Successfully updated document: hotel_20421
+(227/917) Successfully updated document: hotel_20422
+(228/917) Successfully updated document: hotel_20423
+(229/917) Successfully updated document: hotel_20424
+(230/917) Successfully updated document: hotel_20425
+(231/917) Successfully updated document: hotel_20737
+(232/917) Successfully updated document: hotel_20738
+(233/917) Successfully updated document: hotel_20739
+(234/917) Successfully updated document: hotel_20740
+(235/917) Successfully updated document: hotel_20794
+(236/917) Successfully updated document: hotel_20955
+(237/917) Successfully updated document: hotel_20956
+(238/917) Successfully updated document: hotel_20957
+(239/917) Successfully updated document: hotel_20958
+(240/917) Successfully updated document: hotel_20959
+(241/917) Successfully updated document: hotel_21030
+(242/917) Successfully updated document: hotel_21031
+(243/917) Successfully updated document: hotel_21032
+(244/917) Successfully updated document: hotel_21036
+(245/917) Successfully updated document: hotel_21037
+(246/917) Successfully updated document: hotel_21038
+(247/917) Successfully updated document: hotel_21039
+(248/917) Successfully updated document: hotel_21040
+(249/917) Successfully updated document: hotel_21042
+(250/917) Successfully updated document: hotel_21043
+(251/917) Successfully updated document: hotel_21044
+(252/917) Successfully updated document: hotel_21045
+(253/917) Successfully updated document: hotel_21046
+(254/917) Successfully updated document: hotel_21047
+(255/917) Successfully updated document: hotel_21049
+(256/917) Successfully updated document: hotel_21050
+(257/917) Successfully updated document: hotel_21052
+(258/917) Successfully updated document: hotel_21181
+(259/917) Successfully updated document: hotel_21241
+(260/917) Successfully updated document: hotel_21242
+(261/917) Successfully updated document: hotel_21243
+(262/917) Successfully updated document: hotel_21244
+(263/917) Successfully updated document: hotel_21551
+(264/917) Successfully updated document: hotel_21552
+(265/917) Successfully updated document: hotel_21608
+(266/917) Successfully updated document: hotel_21649
+(267/917) Successfully updated document: hotel_21650
+(268/917) Successfully updated document: hotel_21651
+(269/917) Successfully updated document: hotel_21652
+(270/917) Successfully updated document: hotel_21653
+(271/917) Successfully updated document: hotel_21654
+(272/917) Successfully updated document: hotel_21655
+(273/917) Successfully updated document: hotel_21656
+(274/917) Successfully updated document: hotel_21657
+(275/917) Successfully updated document: hotel_21661
+(276/917) Successfully updated document: hotel_21662
+(277/917) Successfully updated document: hotel_21663
+(278/917) Successfully updated document: hotel_21664
+(279/917) Successfully updated document: hotel_21665
+(280/917) Successfully updated document: hotel_21666
+(281/917) Successfully updated document: hotel_21668
+(282/917) Successfully updated document: hotel_21669
+(283/917) Successfully updated document: hotel_21670
+(284/917) Successfully updated document: hotel_21671
+(285/917) Successfully updated document: hotel_21672
+(286/917) Successfully updated document: hotel_21673
+(287/917) Successfully updated document: hotel_21674
+(288/917) Successfully updated document: hotel_21675
+(289/917) Successfully updated document: hotel_21676
+(290/917) Successfully updated document: hotel_21677
+(291/917) Successfully updated document: hotel_21679
+(292/917) Successfully updated document: hotel_21680
+(293/917) Successfully updated document: hotel_21720
+(294/917) Successfully updated document: hotel_21721
+(295/917) Successfully updated document: hotel_21722
+(296/917) Successfully updated document: hotel_21723
+(297/917) Successfully updated document: hotel_21724
+(298/917) Successfully updated document: hotel_21725
+(299/917) Successfully updated document: hotel_21726
+(300/917) Successfully updated document: hotel_21727
+(301/917) Successfully updated document: hotel_21728
+(302/917) Successfully updated document: hotel_21729
+(303/917) Successfully updated document: hotel_21730
+(304/917) Successfully updated document: hotel_21731
+(305/917) Successfully updated document: hotel_21732
+(306/917) Successfully updated document: hotel_21733
+(307/917) Successfully updated document: hotel_21734
+(308/917) Successfully updated document: hotel_21735
+(309/917) Successfully updated document: hotel_21837
+(310/917) Successfully updated document: hotel_21838
+(311/917) Successfully updated document: hotel_21839
+(312/917) Successfully updated document: hotel_21840
+(313/917) Successfully updated document: hotel_21841
+(314/917) Successfully updated document: hotel_21842
+(315/917) Successfully updated document: hotel_21843
+(316/917) Successfully updated document: hotel_21844
+(317/917) Successfully updated document: hotel_21845
+(318/917) Successfully updated document: hotel_21846
+(319/917) Successfully updated document: hotel_21847
+(320/917) Successfully updated document: hotel_21848
+(321/917) Successfully updated document: hotel_21849
+(322/917) Successfully updated document: hotel_21850
+(323/917) Successfully updated document: hotel_21851
+(324/917) Successfully updated document: hotel_21852
+(325/917) Successfully updated document: hotel_21853
+(326/917) Successfully updated document: hotel_21854
+(327/917) Successfully updated document: hotel_21855
+(328/917) Successfully updated document: hotel_21856
+(329/917) Successfully updated document: hotel_21859
+(330/917) Successfully updated document: hotel_21860
+(331/917) Successfully updated document: hotel_21871
+(332/917) Successfully updated document: hotel_21872
+(333/917) Successfully updated document: hotel_21873
+(334/917) Successfully updated document: hotel_21874
+(335/917) Successfully updated document: hotel_21875
+(336/917) Successfully updated document: hotel_21876
+(337/917) Successfully updated document: hotel_21889
+(338/917) Successfully updated document: hotel_21985
+(339/917) Successfully updated document: hotel_21986
+(340/917) Successfully updated document: hotel_21987
+(341/917) Successfully updated document: hotel_22057
+(342/917) Successfully updated document: hotel_22095
+(343/917) Successfully updated document: hotel_22096
+(344/917) Successfully updated document: hotel_2240
+(345/917) Successfully updated document: hotel_2241
+(346/917) Successfully updated document: hotel_2242
+(347/917) Successfully updated document: hotel_22456
+(348/917) Successfully updated document: hotel_22460
+(349/917) Successfully updated document: hotel_22461
+(350/917) Successfully updated document: hotel_22540
+(351/917) Successfully updated document: hotel_23198
+(352/917) Successfully updated document: hotel_23386
+(353/917) Successfully updated document: hotel_23387
+(354/917) Successfully updated document: hotel_23388
+(355/917) Successfully updated document: hotel_23634
+(356/917) Successfully updated document: hotel_24536
+(357/917) Successfully updated document: hotel_24537
+(358/917) Successfully updated document: hotel_24606
+(359/917) Successfully updated document: hotel_24607
+(360/917) Successfully updated document: hotel_24608
+(361/917) Successfully updated document: hotel_24622
+(362/917) Successfully updated document: hotel_24686
+(363/917) Successfully updated document: hotel_24687
+(364/917) Successfully updated document: hotel_2480
+(365/917) Successfully updated document: hotel_2481
+(366/917) Successfully updated document: hotel_2482
+(367/917) Successfully updated document: hotel_2483
+(368/917) Successfully updated document: hotel_2484
+(369/917) Successfully updated document: hotel_25040
+(370/917) Successfully updated document: hotel_25118
+(371/917) Successfully updated document: hotel_25119
+(372/917) Successfully updated document: hotel_25120
+(373/917) Successfully updated document: hotel_25151
+(374/917) Successfully updated document: hotel_25152
+(375/917) Successfully updated document: hotel_25153
+(376/917) Successfully updated document: hotel_25154
+(377/917) Successfully updated document: hotel_25155
+(378/917) Successfully updated document: hotel_25156
+(379/917) Successfully updated document: hotel_25157
+(380/917) Successfully updated document: hotel_25158
+(381/917) Successfully updated document: hotel_25159
+(382/917) Successfully updated document: hotel_25160
+(383/917) Successfully updated document: hotel_25161
+(384/917) Successfully updated document: hotel_25162
+(385/917) Successfully updated document: hotel_25163
+(386/917) Successfully updated document: hotel_25164
+(387/917) Successfully updated document: hotel_25165
+(388/917) Successfully updated document: hotel_25166
+(389/917) Successfully updated document: hotel_25167
+(390/917) Successfully updated document: hotel_25168
+(391/917) Successfully updated document: hotel_25169
+(392/917) Successfully updated document: hotel_25193
+(393/917) Successfully updated document: hotel_25194
+(394/917) Successfully updated document: hotel_25195
+(395/917) Successfully updated document: hotel_25196
+(396/917) Successfully updated document: hotel_25197
+(397/917) Successfully updated document: hotel_25198
+(398/917) Successfully updated document: hotel_25199
+(399/917) Successfully updated document: hotel_25200
+(400/917) Successfully updated document: hotel_25201
+(401/917) Successfully updated document: hotel_25239
+(402/917) Successfully updated document: hotel_25240
+(403/917) Successfully updated document: hotel_25241
+(404/917) Successfully updated document: hotel_25242
+(405/917) Successfully updated document: hotel_25243
+(406/917) Successfully updated document: hotel_25244
+(407/917) Successfully updated document: hotel_25245
+(408/917) Successfully updated document: hotel_25261
+(409/917) Successfully updated document: hotel_25262
+(410/917) Successfully updated document: hotel_25263
+(411/917) Successfully updated document: hotel_25264
+(412/917) Successfully updated document: hotel_25301
+(413/917) Successfully updated document: hotel_25302
+(414/917) Successfully updated document: hotel_25303
+(415/917) Successfully updated document: hotel_25304
+(416/917) Successfully updated document: hotel_25324
+(417/917) Successfully updated document: hotel_25325
+(418/917) Successfully updated document: hotel_25326
+(419/917) Successfully updated document: hotel_25327
+(420/917) Successfully updated document: hotel_25390
+(421/917) Successfully updated document: hotel_25391
+(422/917) Successfully updated document: hotel_25392
+(423/917) Successfully updated document: hotel_25502
+(424/917) Successfully updated document: hotel_25503
+(425/917) Successfully updated document: hotel_25504
+(426/917) Successfully updated document: hotel_25505
+(427/917) Successfully updated document: hotel_25506
+(428/917) Successfully updated document: hotel_25507
+(429/917) Successfully updated document: hotel_25508
+(430/917) Successfully updated document: hotel_25509
+(431/917) Successfully updated document: hotel_25510
+(432/917) Successfully updated document: hotel_25511
+(433/917) Successfully updated document: hotel_25587
+(434/917) Successfully updated document: hotel_25588
+(435/917) Successfully updated document: hotel_25589
+(436/917) Successfully updated document: hotel_25590
+(437/917) Successfully updated document: hotel_25591
+(438/917) Successfully updated document: hotel_25592
+(439/917) Successfully updated document: hotel_25593
+(440/917) Successfully updated document: hotel_25594
+(441/917) Successfully updated document: hotel_25595
+(442/917) Successfully updated document: hotel_25596
+(443/917) Successfully updated document: hotel_25597
+(444/917) Successfully updated document: hotel_25598
+(445/917) Successfully updated document: hotel_25599
+(446/917) Successfully updated document: hotel_25600
+(447/917) Successfully updated document: hotel_25601
+(448/917) Successfully updated document: hotel_25602
+(449/917) Successfully updated document: hotel_25666
+(450/917) Successfully updated document: hotel_25667
+(451/917) Successfully updated document: hotel_25668
+(452/917) Successfully updated document: hotel_25669
+(453/917) Successfully updated document: hotel_25670
+(454/917) Successfully updated document: hotel_25671
+(455/917) Successfully updated document: hotel_25672
+(456/917) Successfully updated document: hotel_25673
+(457/917) Successfully updated document: hotel_25674
+(458/917) Successfully updated document: hotel_25675
+(459/917) Successfully updated document: hotel_25676
+(460/917) Successfully updated document: hotel_25792
+(461/917) Successfully updated document: hotel_25793
+(462/917) Successfully updated document: hotel_25794
+(463/917) Successfully updated document: hotel_25795
+(464/917) Successfully updated document: hotel_25796
+(465/917) Successfully updated document: hotel_25797
+(466/917) Successfully updated document: hotel_25798
+(467/917) Successfully updated document: hotel_25799
+(468/917) Successfully updated document: hotel_25800
+(469/917) Successfully updated document: hotel_25801
+(470/917) Successfully updated document: hotel_25802
+(471/917) Successfully updated document: hotel_25803
+(472/917) Successfully updated document: hotel_25804
+(473/917) Successfully updated document: hotel_25805
+(474/917) Successfully updated document: hotel_25806
+(475/917) Successfully updated document: hotel_25807
+(476/917) Successfully updated document: hotel_25808
+(477/917) Successfully updated document: hotel_25809
+(478/917) Successfully updated document: hotel_25810
+(479/917) Successfully updated document: hotel_25811
+(480/917) Successfully updated document: hotel_25812
+(481/917) Successfully updated document: hotel_25813
+(482/917) Successfully updated document: hotel_25864
+(483/917) Successfully updated document: hotel_25865
+(484/917) Successfully updated document: hotel_25928
+(485/917) Successfully updated document: hotel_25958
+(486/917) Successfully updated document: hotel_25959
+(487/917) Successfully updated document: hotel_25960
+(488/917) Successfully updated document: hotel_25961
+(489/917) Successfully updated document: hotel_25962
+(490/917) Successfully updated document: hotel_25963
+(491/917) Successfully updated document: hotel_25964
+(492/917) Successfully updated document: hotel_25965
+(493/917) Successfully updated document: hotel_25966
+(494/917) Successfully updated document: hotel_25967
+(495/917) Successfully updated document: hotel_25968
+(496/917) Successfully updated document: hotel_25969
+(497/917) Successfully updated document: hotel_25970
+(498/917) Successfully updated document: hotel_26018
+(499/917) Successfully updated document: hotel_26019
+(500/917) Successfully updated document: hotel_26020
+(501/917) Successfully updated document: hotel_26021
+(502/917) Successfully updated document: hotel_26022
+(503/917) Successfully updated document: hotel_26023
+(504/917) Successfully updated document: hotel_26024
+(505/917) Successfully updated document: hotel_26025
+(506/917) Successfully updated document: hotel_26026
+(507/917) Successfully updated document: hotel_26027
+(508/917) Successfully updated document: hotel_26028
+(509/917) Successfully updated document: hotel_26029
+(510/917) Successfully updated document: hotel_26030
+(511/917) Successfully updated document: hotel_2609
+(512/917) Successfully updated document: hotel_2610
+(513/917) Successfully updated document: hotel_2611
+(514/917) Successfully updated document: hotel_26139
+(515/917) Successfully updated document: hotel_26140
+(516/917) Successfully updated document: hotel_26141
+(517/917) Successfully updated document: hotel_26142
+(518/917) Successfully updated document: hotel_26167
+(519/917) Successfully updated document: hotel_26168
+(520/917) Successfully updated document: hotel_26169
+(521/917) Successfully updated document: hotel_26210
+(522/917) Successfully updated document: hotel_26211
+(523/917) Successfully updated document: hotel_26212
+(524/917) Successfully updated document: hotel_26213
+(525/917) Successfully updated document: hotel_26214
+(526/917) Successfully updated document: hotel_26215
+(527/917) Successfully updated document: hotel_26216
+(528/917) Successfully updated document: hotel_26217
+(529/917) Successfully updated document: hotel_26218
+(530/917) Successfully updated document: hotel_26219
+(531/917) Successfully updated document: hotel_2622
+(532/917) Successfully updated document: hotel_26220
+(533/917) Successfully updated document: hotel_26221
+(534/917) Successfully updated document: hotel_26222
+(535/917) Successfully updated document: hotel_26223
+(536/917) Successfully updated document: hotel_26224
+(537/917) Successfully updated document: hotel_26225
+(538/917) Successfully updated document: hotel_26226
+(539/917) Successfully updated document: hotel_26227
+(540/917) Successfully updated document: hotel_26228
+(541/917) Successfully updated document: hotel_26229
+(542/917) Successfully updated document: hotel_2623
+(543/917) Successfully updated document: hotel_26230
+(544/917) Successfully updated document: hotel_26231
+(545/917) Successfully updated document: hotel_26232
+(546/917) Successfully updated document: hotel_26233
+(547/917) Successfully updated document: hotel_26234
+(548/917) Successfully updated document: hotel_26235
+(549/917) Successfully updated document: hotel_26236
+(550/917) Successfully updated document: hotel_26237
+(551/917) Successfully updated document: hotel_26238
+(552/917) Successfully updated document: hotel_2624
+(553/917) Successfully updated document: hotel_2625
+(554/917) Successfully updated document: hotel_26261
+(555/917) Successfully updated document: hotel_26262
+(556/917) Successfully updated document: hotel_26263
+(557/917) Successfully updated document: hotel_26264
+(558/917) Successfully updated document: hotel_26265
+(559/917) Successfully updated document: hotel_26284
+(560/917) Successfully updated document: hotel_26489
+(561/917) Successfully updated document: hotel_26490
+(562/917) Successfully updated document: hotel_26491
+(563/917) Successfully updated document: hotel_26492
+(564/917) Successfully updated document: hotel_26493
+(565/917) Successfully updated document: hotel_26494
+(566/917) Successfully updated document: hotel_26495
+(567/917) Successfully updated document: hotel_26496
+(568/917) Successfully updated document: hotel_26497
+(569/917) Successfully updated document: hotel_26498
+(570/917) Successfully updated document: hotel_26499
+(571/917) Successfully updated document: hotel_26500
+(572/917) Successfully updated document: hotel_26501
+(573/917) Successfully updated document: hotel_26502
+(574/917) Successfully updated document: hotel_26731
+(575/917) Successfully updated document: hotel_26993
+(576/917) Successfully updated document: hotel_26999
+(577/917) Successfully updated document: hotel_27082
+(578/917) Successfully updated document: hotel_27165
+(579/917) Successfully updated document: hotel_27626
+(580/917) Successfully updated document: hotel_27627
+(581/917) Successfully updated document: hotel_27741
+(582/917) Successfully updated document: hotel_27819
+(583/917) Successfully updated document: hotel_27820
+(584/917) Successfully updated document: hotel_27821
+(585/917) Successfully updated document: hotel_27822
+(586/917) Successfully updated document: hotel_27823
+(587/917) Successfully updated document: hotel_27824
+(588/917) Successfully updated document: hotel_27825
+(589/917) Successfully updated document: hotel_27826
+(590/917) Successfully updated document: hotel_27827
+(591/917) Successfully updated document: hotel_2814
+(592/917) Successfully updated document: hotel_2815
+(593/917) Successfully updated document: hotel_28159
+(594/917) Successfully updated document: hotel_28170
+(595/917) Successfully updated document: hotel_28171
+(596/917) Successfully updated document: hotel_28177
+(597/917) Successfully updated document: hotel_28178
+(598/917) Successfully updated document: hotel_28179
+(599/917) Successfully updated document: hotel_28259
+(600/917) Successfully updated document: hotel_28261
+(601/917) Successfully updated document: hotel_28656
+(602/917) Successfully updated document: hotel_28657
+(603/917) Successfully updated document: hotel_28658
+(604/917) Successfully updated document: hotel_28676
+(605/917) Successfully updated document: hotel_28955
+(606/917) Successfully updated document: hotel_28956
+(607/917) Successfully updated document: hotel_28957
+(608/917) Successfully updated document: hotel_28958
+(609/917) Successfully updated document: hotel_28959
+(610/917) Successfully updated document: hotel_28960
+(611/917) Successfully updated document: hotel_28962
+(612/917) Successfully updated document: hotel_28970
+(613/917) Successfully updated document: hotel_29560
+(614/917) Successfully updated document: hotel_29610
+(615/917) Successfully updated document: hotel_30016
+(616/917) Successfully updated document: hotel_30017
+(617/917) Successfully updated document: hotel_30018
+(618/917) Successfully updated document: hotel_30128
+(619/917) Successfully updated document: hotel_30131
+(620/917) Successfully updated document: hotel_30250
+(621/917) Successfully updated document: hotel_30257
+(622/917) Successfully updated document: hotel_30258
+(623/917) Successfully updated document: hotel_30259
+(624/917) Successfully updated document: hotel_30637
+(625/917) Successfully updated document: hotel_30930
+(626/917) Successfully updated document: hotel_31642
+(627/917) Successfully updated document: hotel_31944
+(628/917) Successfully updated document: hotel_32143
+(629/917) Successfully updated document: hotel_32171
+(630/917) Successfully updated document: hotel_32172
+(631/917) Successfully updated document: hotel_32173
+(632/917) Successfully updated document: hotel_32174
+(633/917) Successfully updated document: hotel_32175
+(634/917) Successfully updated document: hotel_32176
+(635/917) Successfully updated document: hotel_32177
+(636/917) Successfully updated document: hotel_32861
+(637/917) Successfully updated document: hotel_33342
+(638/917) Successfully updated document: hotel_33343
+(639/917) Successfully updated document: hotel_33348
+(640/917) Successfully updated document: hotel_33425
+(641/917) Successfully updated document: hotel_33426
+(642/917) Successfully updated document: hotel_33431
+(643/917) Successfully updated document: hotel_33536
+(644/917) Successfully updated document: hotel_33537
+(645/917) Successfully updated document: hotel_33539
+(646/917) Successfully updated document: hotel_33546
+(647/917) Successfully updated document: hotel_3367
+(648/917) Successfully updated document: hotel_3368
+(649/917) Successfully updated document: hotel_3369
+(650/917) Successfully updated document: hotel_3371
+(651/917) Successfully updated document: hotel_3376
+(652/917) Successfully updated document: hotel_3377
+(653/917) Successfully updated document: hotel_3378
+(654/917) Successfully updated document: hotel_33861
+(655/917) Successfully updated document: hotel_33883
+(656/917) Successfully updated document: hotel_33884
+(657/917) Successfully updated document: hotel_33885
+(658/917) Successfully updated document: hotel_33886
+(659/917) Successfully updated document: hotel_33887
+(660/917) Successfully updated document: hotel_33888
+(661/917) Successfully updated document: hotel_33889
+(662/917) Successfully updated document: hotel_33890
+(663/917) Successfully updated document: hotel_33891
+(664/917) Successfully updated document: hotel_33892
+(665/917) Successfully updated document: hotel_33893
+(666/917) Successfully updated document: hotel_33894
+(667/917) Successfully updated document: hotel_33895
+(668/917) Successfully updated document: hotel_33896
+(669/917) Successfully updated document: hotel_33897
+(670/917) Successfully updated document: hotel_33898
+(671/917) Successfully updated document: hotel_33899
+(672/917) Successfully updated document: hotel_33900
+(673/917) Successfully updated document: hotel_33901
+(674/917) Successfully updated document: hotel_33902
+(675/917) Successfully updated document: hotel_34194
+(676/917) Successfully updated document: hotel_34195
+(677/917) Successfully updated document: hotel_3422
+(678/917) Successfully updated document: hotel_3423
+(679/917) Successfully updated document: hotel_3424
+(680/917) Successfully updated document: hotel_3425
+(681/917) Successfully updated document: hotel_3426
+(682/917) Successfully updated document: hotel_3427
+(683/917) Successfully updated document: hotel_3428
+(684/917) Successfully updated document: hotel_3430
+(685/917) Successfully updated document: hotel_3491
+(686/917) Successfully updated document: hotel_34956
+(687/917) Successfully updated document: hotel_34985
+(688/917) Successfully updated document: hotel_35074
+(689/917) Successfully updated document: hotel_35075
+(690/917) Successfully updated document: hotel_35080
+(691/917) Successfully updated document: hotel_35081
+(692/917) Successfully updated document: hotel_35667
+(693/917) Successfully updated document: hotel_35668
+(694/917) Successfully updated document: hotel_35669
+(695/917) Successfully updated document: hotel_35854
+(696/917) Successfully updated document: hotel_35855
+(697/917) Successfully updated document: hotel_35856
+(698/917) Successfully updated document: hotel_35857
+(699/917) Successfully updated document: hotel_35858
+(700/917) Successfully updated document: hotel_3605
+(701/917) Successfully updated document: hotel_3606
+(702/917) Successfully updated document: hotel_3607
+(703/917) Successfully updated document: hotel_3608
+(704/917) Successfully updated document: hotel_3609
+(705/917) Successfully updated document: hotel_3610
+(706/917) Successfully updated document: hotel_3611
+(707/917) Successfully updated document: hotel_3612
+(708/917) Successfully updated document: hotel_3613
+(709/917) Successfully updated document: hotel_3614
+(710/917) Successfully updated document: hotel_3615
+(711/917) Successfully updated document: hotel_36154
+(712/917) Successfully updated document: hotel_36155
+(713/917) Successfully updated document: hotel_36156
+(714/917) Successfully updated document: hotel_3616
+(715/917) Successfully updated document: hotel_3617
+(716/917) Successfully updated document: hotel_3618
+(717/917) Successfully updated document: hotel_3619
+(718/917) Successfully updated document: hotel_3620
+(719/917) Successfully updated document: hotel_3621
+(720/917) Successfully updated document: hotel_3622
+(721/917) Successfully updated document: hotel_3623
+(722/917) Successfully updated document: hotel_3624
+(723/917) Successfully updated document: hotel_3625
+(724/917) Successfully updated document: hotel_3626
+(725/917) Successfully updated document: hotel_3627
+(726/917) Successfully updated document: hotel_3628
+(727/917) Successfully updated document: hotel_3629
+(728/917) Successfully updated document: hotel_3630
+(729/917) Successfully updated document: hotel_3631
+(730/917) Successfully updated document: hotel_3632
+(731/917) Successfully updated document: hotel_3633
+(732/917) Successfully updated document: hotel_3634
+(733/917) Successfully updated document: hotel_3635
+(734/917) Successfully updated document: hotel_3636
+(735/917) Successfully updated document: hotel_3637
+(736/917) Successfully updated document: hotel_3638
+(737/917) Successfully updated document: hotel_3639
+(738/917) Successfully updated document: hotel_3640
+(739/917) Successfully updated document: hotel_3641
+(740/917) Successfully updated document: hotel_3642
+(741/917) Successfully updated document: hotel_3643
+(742/917) Successfully updated document: hotel_3644
+(743/917) Successfully updated document: hotel_3645
+(744/917) Successfully updated document: hotel_3646
+(745/917) Successfully updated document: hotel_3647
+(746/917) Successfully updated document: hotel_3648
+(747/917) Successfully updated document: hotel_3714
+(748/917) Successfully updated document: hotel_37248
+(749/917) Successfully updated document: hotel_37297
+(750/917) Successfully updated document: hotel_37317
+(751/917) Successfully updated document: hotel_37318
+(752/917) Successfully updated document: hotel_37338
+(753/917) Successfully updated document: hotel_37339
+(754/917) Successfully updated document: hotel_37340
+(755/917) Successfully updated document: hotel_37341
+(756/917) Successfully updated document: hotel_3740
+(757/917) Successfully updated document: hotel_37590
+(758/917) Successfully updated document: hotel_37591
+(759/917) Successfully updated document: hotel_37592
+(760/917) Successfully updated document: hotel_37593
+(761/917) Successfully updated document: hotel_37594
+(762/917) Successfully updated document: hotel_37595
+(763/917) Successfully updated document: hotel_37596
+(764/917) Successfully updated document: hotel_37597
+(765/917) Successfully updated document: hotel_37649
+(766/917) Successfully updated document: hotel_37650
+(767/917) Successfully updated document: hotel_3785
+(768/917) Successfully updated document: hotel_3786
+(769/917) Successfully updated document: hotel_37886
+(770/917) Successfully updated document: hotel_37887
+(771/917) Successfully updated document: hotel_38018
+(772/917) Successfully updated document: hotel_38019
+(773/917) Successfully updated document: hotel_38036
+(774/917) Successfully updated document: hotel_3852
+(775/917) Successfully updated document: hotel_38525
+(776/917) Successfully updated document: hotel_39979
+(777/917) Successfully updated document: hotel_40
+(778/917) Successfully updated document: hotel_40000
+(779/917) Successfully updated document: hotel_40017
+(780/917) Successfully updated document: hotel_40093
+(781/917) Successfully updated document: hotel_40136
+(782/917) Successfully updated document: hotel_40177
+(783/917) Successfully updated document: hotel_40178
+(784/917) Successfully updated document: hotel_40179
+(785/917) Successfully updated document: hotel_40185
+(786/917) Successfully updated document: hotel_40186
+(787/917) Successfully updated document: hotel_40187
+(788/917) Successfully updated document: hotel_40188
+(789/917) Successfully updated document: hotel_40356
+(790/917) Successfully updated document: hotel_40382
+(791/917) Successfully updated document: hotel_40383
+(792/917) Successfully updated document: hotel_4042
+(793/917) Successfully updated document: hotel_40662
+(794/917) Successfully updated document: hotel_4099
+(795/917) Successfully updated document: hotel_41208
+(796/917) Successfully updated document: hotel_41209
+(797/917) Successfully updated document: hotel_41215
+(798/917) Successfully updated document: hotel_41216
+(799/917) Successfully updated document: hotel_41227
+(800/917) Successfully updated document: hotel_41237
+(801/917) Successfully updated document: hotel_41239
+(802/917) Successfully updated document: hotel_4385
+(803/917) Successfully updated document: hotel_4396
+(804/917) Successfully updated document: hotel_4397
+(805/917) Successfully updated document: hotel_4398
+(806/917) Successfully updated document: hotel_4399
+(807/917) Successfully updated document: hotel_4668
+(808/917) Successfully updated document: hotel_4929
+(809/917) Successfully updated document: hotel_4930
+(810/917) Successfully updated document: hotel_4951
+(811/917) Successfully updated document: hotel_5031
+(812/917) Successfully updated document: hotel_5078
+(813/917) Successfully updated document: hotel_5080
+(814/917) Successfully updated document: hotel_5081
+(815/917) Successfully updated document: hotel_5082
+(816/917) Successfully updated document: hotel_5097
+(817/917) Successfully updated document: hotel_5098
+(818/917) Successfully updated document: hotel_5110
+(819/917) Successfully updated document: hotel_5111
+(820/917) Successfully updated document: hotel_5112
+(821/917) Successfully updated document: hotel_5113
+(822/917) Successfully updated document: hotel_5114
+(823/917) Successfully updated document: hotel_5119
+(824/917) Successfully updated document: hotel_5120
+(825/917) Successfully updated document: hotel_5192
+(826/917) Successfully updated document: hotel_5193
+(827/917) Successfully updated document: hotel_5332
+(828/917) Successfully updated document: hotel_5333
+(829/917) Successfully updated document: hotel_5334
+(830/917) Successfully updated document: hotel_5335
+(831/917) Successfully updated document: hotel_5336
+(832/917) Successfully updated document: hotel_5337
+(833/917) Successfully updated document: hotel_5338
+(834/917) Successfully updated document: hotel_5580
+(835/917) Successfully updated document: hotel_5839
+(836/917) Successfully updated document: hotel_5840
+(837/917) Successfully updated document: hotel_5841
+(838/917) Successfully updated document: hotel_5842
+(839/917) Successfully updated document: hotel_5843
+(840/917) Successfully updated document: hotel_5844
+(841/917) Successfully updated document: hotel_5845
+(842/917) Successfully updated document: hotel_5846
+(843/917) Successfully updated document: hotel_5847
+(844/917) Successfully updated document: hotel_5848
+(845/917) Successfully updated document: hotel_593
+(846/917) Successfully updated document: hotel_594
+(847/917) Successfully updated document: hotel_595
+(848/917) Successfully updated document: hotel_596
+(849/917) Successfully updated document: hotel_597
+(850/917) Successfully updated document: hotel_6076
+(851/917) Successfully updated document: hotel_6169
+(852/917) Successfully updated document: hotel_635
+(853/917) Successfully updated document: hotel_6351
+(854/917) Successfully updated document: hotel_64
+(855/917) Successfully updated document: hotel_65
+(856/917) Successfully updated document: hotel_6907
+(857/917) Successfully updated document: hotel_6931
+(858/917) Successfully updated document: hotel_7000
+(859/917) Successfully updated document: hotel_7001
+(860/917) Successfully updated document: hotel_7007
+(861/917) Successfully updated document: hotel_7008
+(862/917) Successfully updated document: hotel_7060
+(863/917) Successfully updated document: hotel_7061
+(864/917) Successfully updated document: hotel_7062
+(865/917) Successfully updated document: hotel_7384
+(866/917) Successfully updated document: hotel_7385
+(867/917) Successfully updated document: hotel_7386
+(868/917) Successfully updated document: hotel_7387
+(869/917) Successfully updated document: hotel_7388
+(870/917) Successfully updated document: hotel_7389
+(871/917) Successfully updated document: hotel_7390
+(872/917) Successfully updated document: hotel_7391
+(873/917) Successfully updated document: hotel_7392
+(874/917) Successfully updated document: hotel_7393
+(875/917) Successfully updated document: hotel_7394
+(876/917) Successfully updated document: hotel_7395
+(877/917) Successfully updated document: hotel_7396
+(878/917) Successfully updated document: hotel_7624
+(879/917) Successfully updated document: hotel_7766
+(880/917) Successfully updated document: hotel_7767
+(881/917) Successfully updated document: hotel_7768
+(882/917) Successfully updated document: hotel_7769
+(883/917) Successfully updated document: hotel_7770
+(884/917) Successfully updated document: hotel_7771
+(885/917) Successfully updated document: hotel_7780
+(886/917) Successfully updated document: hotel_7781
+(887/917) Successfully updated document: hotel_7782
+(888/917) Successfully updated document: hotel_8340
+(889/917) Successfully updated document: hotel_8349
+(890/917) Successfully updated document: hotel_8495
+(891/917) Successfully updated document: hotel_8551
+(892/917) Successfully updated document: hotel_8576
+(893/917) Successfully updated document: hotel_8661
+(894/917) Successfully updated document: hotel_8662
+(895/917) Successfully updated document: hotel_8663
+(896/917) Successfully updated document: hotel_8664
+(897/917) Successfully updated document: hotel_8685
+(898/917) Successfully updated document: hotel_8709
+(899/917) Successfully updated document: hotel_8710
+(900/917) Successfully updated document: hotel_8711
+(901/917) Successfully updated document: hotel_8712
+(902/917) Successfully updated document: hotel_8962
+(903/917) Successfully updated document: hotel_8966
+(904/917) Successfully updated document: hotel_9062
+(905/917) Successfully updated document: hotel_9084
+(906/917) Successfully updated document: hotel_9085
+(907/917) Successfully updated document: hotel_9086
+(908/917) Successfully updated document: hotel_9154
+(909/917) Successfully updated document: hotel_9292
+(910/917) Successfully updated document: hotel_9293
+(911/917) Successfully updated document: hotel_9294
+(912/917) Successfully updated document: hotel_9335
+(913/917) Successfully updated document: hotel_9336
+(914/917) Successfully updated document: hotel_9343
+(915/917) Successfully updated document: hotel_9723
+(916/917) Successfully updated document: hotel_9724
+(917/917) Successfully updated document: hotel_9905
+
+Embedding generation and document updates complete.
+(cb-sdk-py313) timtadeo@Tims-MacBook-Pro-2 CouchBase % 
