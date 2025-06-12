@@ -26,7 +26,7 @@ from couchbase.search import MatchQuery
 DB_HOST = "localhost"
 # The administrator credentials for your local Docker instance.
 DB_USERNAME = "app_user"
-DB_PASSWORD = "Sylveo$259"
+DB_PASSWORD = "xxxxxx"
 # The name of the FTS index we created in the local Couchbase UI.
 INDEX_NAME = "hybrid-hotel-search-index"
 
