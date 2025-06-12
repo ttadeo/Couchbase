@@ -9,7 +9,7 @@ from couchbase.cluster import Cluster
 from couchbase.options import ClusterOptions
 endpoint = "couchbases://cb.aa5iafvhxvmxutqg.cloud.couchbase.com" # Replace this with Connection String
 username = "capella_app_user" # Replace this with username from cluster access credentials
-password = "Sylveo$259" # Replace this with password from cluster access credentials
+password = "xxxxxx" # Replace this with password from cluster access credentials
 bucket_name = "travel-sample"
 scope_name = "inventory"
 collection_name = "hotel"
