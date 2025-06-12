@@ -1,0 +1,30 @@
+# Architectural Design Rationale
+
+This document outlines the key architectural decisions made during the development of the semantic search application. The final architecture was chosen after evaluating several alternatives and is designed to be robust, performant, and aligned with Couchbase best practices.
+
+### 1. Choice of Search Engine: FTS vs. GSI
+
+A primary architectural decision was which Couchbase service to use for vector search.
+
+-   **GSI with `VECTOR_SEARCH()`:** This is a modern and appealing option as it integrates vector search directly into the familiar SQL++ query engine. However, our investigation revealed that creating the necessary GSI vector index (`CREATE INDEX ... WITH {"index_type": "vector"}`) is a feature with very specific environmental requirements and was not supported in our target environment.
+-   **Full-Text Search (FTS) Service:** This is Couchbase's mature, dedicated, and highly-featured search engine. It is specifically designed to handle complex keyword and vector searches.
+
+**Decision:** We chose the **Full-Text Search (FTS) service** for our final architecture. It is the most reliable and universally supported method for implementing vector search in Couchbase. Our application queries the FTS index using the `scope.search()` method in the Python SDK, which proved to be the most robust and successful approach.
+
+### 2. Data Model: Co-locating Embeddings
+
+-   **Design Choice:** Instead of storing the generated vector embeddings in a separate bucket or collection, we chose to add a new `description_embedding` field directly to the original `hotel` documents.
+-   **Rationale:** This co-location strategy vastly simplifies the data model. It avoids the complexity of having to manage and join two separate datasets. The semantic vector is treated as just another attribute of the hotel, ensuring data integrity and making the documents self-contained and easy to manage.
+
+### 3. Retrieval Strategy: Hybrid Search
+
+-   **Design Choice:** The application implements a hybrid search, combining a keyword `MatchQuery` with a `VectorQuery` in a single request.
+-   **Rationale:** Relying on either method alone is insufficient.
+    -   **Vector-only search** understands user intent ("a quiet place") but can be imprecise with specific names or terms.
+    -   **Keyword-only search** is precise but lacks contextual understanding.
+    -   By **combining** them and using `boost` parameters, we get the best of both worlds. The vector search finds a set of semantically relevant documents, and the keyword search acts as a filter or booster to refine those results based on the user's specific terms, leading to a superior user experience.
+
+### 4. Index Configuration: Storing Fields
+
+-   **Design Choice:** The FTS index was configured to *index* the `name` and `description` fields but not to *store* them.
+-   **Rationale:** This creates a smaller, more lightweight index, which is faster to build and uses fewer server resources. The trade-off is that the application must perform a fast Key-Value `get` operation for each search hit to retrieve the details for display. Our script was explicitly designed with a robust fallback to handle this two-step process, as shown by the `(Note: Fetching document...)` message in the output.
