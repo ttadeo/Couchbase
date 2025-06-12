@@ -27,7 +27,7 @@ from couchbase.vector_search import VectorQuery, VectorSearch
 CAPELLA_ENDPOINT = "cb.aa5iafvhxvmxutqg.cloud.couchbase.com" # Your Capella endpoint from yesterday
 # The new, correctly permissioned user you created in the Capella UI.
 DB_USERNAME = "capella_app_user"
-DB_PASSWORD = "Sylveo$259"
+DB_PASSWORD = "xxxxxx"
 BUCKET_NAME = "travel-sample"
 # The name of the FTS index you created in the Capella UI.
 INDEX_NAME = "hybrid-hotel-search-index"
