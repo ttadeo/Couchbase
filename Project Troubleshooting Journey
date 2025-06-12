@@ -1,0 +1,23 @@
+# Project Troubleshooting Journey
+
+This document chronicles the real-world troubleshooting process encountered during the development of the semantic search application. The journey from initial concept to a fully working application involved diagnosing and overcoming several distinct environmental and SDK-level challenges, demonstrating a robust and adaptive development methodology.
+
+### Challenge 1: Initial Capella Connectivity
+
+-   **Symptom:** The initial Python scripts failed to connect to the Capella cluster, throwing an `UnAmbiguousTimeoutException`.
+-   **Diagnosis:** A `ping` command to the Capella endpoint also failed with an `Unknown host` error. This proved the issue was not with the application code or Couchbase itself, but was a lower-level DNS resolution failure on the local machine.
+-   **Resolution:** The issue was resolved by configuring the local machine's network settings to use a public DNS provider (`8.8.8.8`), which allowed the Capella endpoint to be resolved correctly.
+
+### Challenge 2: The `QueryIndexNotFoundException`
+
+-   **Symptom:** After successfully creating a scoped FTS index on `travel-sample.inventory.hotel`, the Python script consistently failed with a `QueryIndexNotFoundException`. The error context contained the key phrase `rest_auth: preparePerms`, pointing to a complex permissions problem.
+-   **Initial Diagnosis:** The initial theory was that the application user lacked the necessary roles. We methodically created a new user and added the `Search Admin`, `Bucket Admin`, `Data Reader`, and `Query Select` roles.
+-   **The Plot Twist:** The error *persisted* for the Python SDK, even though manual tests in the Capella UI *succeeded* for the same user with the same query. This proved the user's roles and the index itself were correct.
+-   **Root Cause Analysis:** The problem was isolated to the Python SDK's interaction with the server. By analyzing SDK documentation and a `CouchbaseDeprecationWarning`, we diagnosed that our SDK call was missing the necessary `scope` context. The SDK was looking for the index at the bucket level instead of within the `inventory` scope.
+-   **Resolution:** The script was re-architected to call the `.search()` method directly on a `Scope` object (`scope.search(...)`) instead of the `Cluster` object. This provided the correct context and immediately resolved the permissions error, allowing the application to run successfully against Capella.
+
+### Challenge 3: Minor SDK Method Bugs
+
+-   **Symptom:** A series of minor `AttributeError` and `TypeError` messages appeared after the main issue was resolved.
+-   **Diagnosis:** These were traced to subtle differences in the SDK's object model.
+-   **Resolution:** Calls like `result.rows` and `result.metadata().metrics` were corrected to be method calls: `result.rows()` and `result.metadata().metrics()`. A `TypeError` on formatting the query duration was fixed by converting the `timedelta` object returned by `.took()` into a number using `.total_seconds()` before formatting.
