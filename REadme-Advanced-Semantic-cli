@@ -1,0 +1,88 @@
+Advanced Semantic Search CLI for Couchbase
+This project provides a professional-grade Python command-line interface (CLI) for building and querying a semantic search system on Couchbase Capella. It consolidates data enrichment and hybrid search functionalities into a single, flexible tool, directly addressing the "Bonus Points" requirements of the Couchbase Technical Challenge by allowing for easy experimentation with different embedding models.
+
+Features
+Unified Toolchain: A single script, advanced_semantic_cli.py, handles both generating embeddings and performing searches using sub-commands (generate and search).
+
+Dynamic Model Selection: Allows the user to specify which Sentence Transformer model to use via a command-line argument, making it easy to experiment with different embeddings.
+
+Automatic Dimension Detection: The generate command automatically detects the vector dimension of the chosen model and informs the user, preventing configuration errors when creating the FTS index.
+
+Flexible Index Targeting: The search command allows the user to specify which FTS index to query, enabling side-by-side comparison of indexes built with different models.
+
+Robust Hybrid Search: Implements a sophisticated hybrid search by combining keyword and vector queries using the Couchbase Python SDK's modern builder patterns.
+
+Architecture
+The application is built around a single script that uses Python's argparse library to manage two primary workflows:
+
+generate command: This sub-command connects to the Capella cluster, loads a specified Sentence Transformer model, and iterates through the travel-sample.inventory.hotel collection. For each document, it generates a vector embedding from the description and stores it in a new, dynamically named field (e.g., embedding_all-MiniLM-L12-v2).
+
+search command: This sub-command connects to Capella and takes a user's natural language query. It uses the specified model to generate a query vector and then executes a hybrid query against a specified Full-Text Search (FTS) index. The query combines a keyword MatchQuery with a VectorQuery to find the most relevant results.
+
+Setup and Usage on Capella
+Step 1: Prepare Environment
+Clone this repository.
+
+Install the required Python packages:
+
+pip install couchbase sentence-transformers
+
+Update the configuration variables at the top of advanced_semantic_cli.py with your Capella endpoint and database user credentials.
+
+Step 2: Generate Embeddings
+To populate your Capella documents with vector embeddings, run the generate command. You can use the default model or specify another.
+
+# Use the default 'all-MiniLM-L6-v2' model
+python advanced_semantic_cli.py generate
+
+The script will output the detected vector dimension. Make a note of this dimension.
+
+Step 3: Create a Corresponding FTS Index
+In the Capella UI, navigate to the Search tab.
+
+Create a new FTS index (e.g., hybrid-index-l6).
+
+Configure it to target the travel-sample.inventory.hotel collection.
+
+Add a child mapping for the vector field:
+
+field: embedding_all-MiniLM-L6-v2 (This must match the field name output by the script).
+
+type: vector
+
+Dims: 384 (This must match the dimension output by the script).
+
+Similarity: cosine
+
+Add another child mapping for the keyword field:
+
+field: description
+
+type: text
+
+Create the index and wait for it to build.
+
+Step 4: Run a Hybrid Search
+You can now use the search command to query the index you just created.
+
+# Search using the default model against your new index
+python advanced_semantic_cli.py search \
+    --query "a charming hotel with a quiet garden" \
+    --index "hybrid-index-l6"
+
+Experimenting with a Different Model (Bonus Points)
+To demonstrate the "experiment with different models" bonus, simply repeat steps 2 and 3 with a new model.
+
+# 1. Generate embeddings with a larger model
+python advanced_semantic_cli.py generate --model "all-mpnet-base-v2"
+
+# 2. Note the new dimension (768) and new field name (embedding_all-mpnet-base-v2).
+#    Create a new FTS index in the UI named 'hybrid-index-mpnet' with these details.
+
+# 3. Search against the new index with the corresponding model.
+python advanced_semantic_cli.py search \
+    --query "a charming hotel with a quiet garden" \
+    --index "hybrid-index-mpnet" \
+    --model "all-mpnet-base-v2"
+
+This workflow provides a clear and powerful way to test and compare the effectiveness of different embedding models.
